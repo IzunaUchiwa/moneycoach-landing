@@ -2,10 +2,55 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MoneyCoach MA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Bienvenue sur MoneyCoach MA</h1>
-  <p>Application marocaine de gestion budgétaire en Darija 🇲🇦</p>
+  <header class="fade-in">
+    <div class="logo">MoneyCoach MA</div>
+    <nav>
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#features">Fonctionnalités</a></li>
+        <li><a href="#download">Téléchargement</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero fade-in">
+    <h1>Ton coach budget en Darija 🇲🇦</h1>
+    <p>Simplifie tes finances familiales, visualise tes dépenses, anticipe Ramadan et Aïd.</p>
+    <button id="download-btn" class="btn-download">Télécharge l'app</button>
+  </section>
+
+  <section id="features" class="features fade-in">
+    <div class="feature-card">Ajout manuel ou via SMS bancaire</div>
+    <div class="feature-card">Budgets dynamiques avec alertes</div>
+    <div class="feature-card">Dashboard clair (solde global, burn rate)</div>
+    <div class="feature-card">Interface Darija / Français</div>
+  </section>
+
+  <section class="screenshots fade-in">
+    <h2>Screenshots</h2>
+    <div class="screenshot-placeholder"></div>
+    <div class="screenshot-placeholder"></div>
+    <div class="screenshot-placeholder"></div>
+  </section>
+
+  <section class="testimonials fade-in">
+    <div class="testimonial">“Fatima, mère de 3 enfants : ‘Je gère enfin toutes mes factures sans stress !’”</div>
+    <div class="testimonial">“Youssef, lycéen : ‘Je sais où passe mon argent de poche !’”</div>
+  </section>
+
+  <footer class="fade-in">
+    <p><a href="#">Confidentialité</a> | <a href="#">CGU</a></p>
+    <p>Réseaux sociaux (icônes)</p>
+    <p>Conforme à la loi 09-08 CNDP</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
