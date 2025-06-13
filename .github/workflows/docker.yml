@@ -1,0 +1,22 @@
+name: Build and Push
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+      - name: Build API image
+        run: docker build -t api:latest ./api
+      - name: Build Web image
+        run: docker build -t web:latest ./web
+      - name: Push images
+        run: |
+          echo "login and push here"
