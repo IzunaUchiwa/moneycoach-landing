@@ -1,188 +1,142 @@
-/* Main stylesheet for MoneyCoach MA landing page */
+/* Styles for MoneyCoach MA login page */
 :root {
-  --primary-green: #16b57f;
-  --primary-green-dark: #0d8b62;
-  --deep-blue: #1d3557;
-  --soft-cream: #fdfcf9;
-  --accent-mint: #9ff2cf;
-  --hero-gradient: radial-gradient(at top left, var(--primary-green) 0%, var(--deep-blue) 100%);
-  --btn-gradient: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
-  --radius-lg: 16px;
-  --radius-sm: 12px;
-  --shadow: 0 4px 12px rgba(0,0,0,0.08);
-  --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
-  --max-width: 1280px;
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 32px;
-  --spacing-xl: 64px;
-  font-family: 'Roboto', 'Noto Kufi Arabic', sans-serif;
-  color: var(--deep-blue);
-  background-color: var(--soft-cream);
-  scroll-behavior: smooth;
+  --bg-base: #f9fafb;
+  --bg-gradient-start: #f1f5f9;
+  --bg-gradient-end: #e2e8f0;
+  --card-bg: rgba(255,255,255,0.75);
+  --card-border: rgba(255,255,255,0.6);
+  --primary: #2563eb;
+  --primary-hover: #1e40af;
+  --text-primary: #0f172a;
+  --text-muted: #64748b;
+  --radius-card: 24px;
+  --radius-element: 12px;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  line-height: 1.6;
-}
-
-h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  margin: 0 0 var(--spacing-md);
-}
-
-h2 { margin-bottom: var(--spacing-md); }
-
-.site-header {
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(6px);
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 10;
-  box-shadow: var(--shadow);
-}
-
-.nav-bar {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: radial-gradient(circle at top, var(--bg-gradient-start), var(--bg-gradient-end)) var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.5;
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  max-width: var(--max-width);
-  padding: var(--spacing-sm) var(--spacing-md);
-  margin: 0 auto;
+  padding: 1rem;
 }
 
-.nav-links a {
-  margin-left: var(--spacing-md);
-  font-weight: 700;
-  color: var(--deep-blue);
-  text-decoration: none;
-}
-
-.hero-section {
-  background: var(--hero-gradient);
-  color: var(--soft-cream);
-  text-align: center;
-  padding: var(--spacing-xl) var(--spacing-md);
-}
-
-.tagline { font-size: 1.125rem; }
-
-.cta {
-  background: var(--btn-gradient);
-  color: var(--soft-cream);
-  border: none;
-  padding: var(--spacing-sm) var(--spacing-lg);
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  font-size: 1rem;
-  min-height: 48px;
-  box-shadow: var(--shadow);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.cta:hover {
-  transform: scale(1.05);
-  box-shadow: var(--shadow-hover);
-}
-
-.content-section {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: var(--spacing-lg) var(--spacing-md);
-}
-
-.cards {
-  display: grid;
-  gap: var(--spacing-md);
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  animation: fade-up 0.4s cubic-bezier(.22,.61,.36,1);
 }
 
 @media (min-width: 768px) {
-  .cards { grid-template-columns: repeat(3, 1fr); }
+  .login-card {
+    backdrop-filter: blur(12px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  }
 }
 
-.card {
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-md);
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(6px);
-  box-shadow: var(--shadow);
-  text-align: center;
-  transition: box-shadow 0.2s;
+h1 {
+  font-size: clamp(1.8rem, 5vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.25rem;
 }
 
-.card:hover { box-shadow: var(--shadow-hover); }
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: var(--spacing-md);
-  text-align: center;
+.card-header p {
+  margin: 0;
+  color: var(--text-muted);
 }
 
-.feature-card {
-  padding: var(--spacing-md);
-}
-
-.feature-icon {
-  font-size: 2rem;
-  margin-bottom: var(--spacing-sm);
-}
-
-.mockup-strip {
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-md);
-  padding: var(--spacing-lg) var(--spacing-md);
-}
-
-.mockup-strip .screen {
-  width: 30%;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-}
-
-.pricing {
-  text-align: center;
-}
-
-.join-beta form {
+.login-form {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: 1rem;
 }
 
-.join-beta input {
-  padding: var(--spacing-sm);
-  border: 1px solid var(--deep-blue);
-  border-radius: var(--radius-sm);
-  min-height: 48px;
+.login-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
 }
 
-.privacy { font-size: 0.875rem; }
-
-.site-footer {
-  background: var(--deep-blue);
-  color: var(--soft-cream);
-  text-align: center;
-  padding: var(--spacing-md);
-  margin-top: var(--spacing-lg);
+.login-form input {
+  height: 48px;
+  padding: 0 1rem;
+  border-radius: var(--radius-element);
+  border: 1px solid var(--card-border);
+  background: rgba(255,255,255,0.5);
+  color: var(--text-primary);
 }
 
-.footer-nav a {
-  color: var(--soft-cream);
-  margin: 0 var(--spacing-sm);
+.login-form input:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.submit-btn {
+  height: 48px;
+  width: 100%;
+  border: none;
+  border-radius: var(--radius-element);
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.submit-btn:hover {
+  transform: scale(1.03);
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.card-footer {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-footer .link {
+  color: var(--primary);
   text-decoration: none;
+}
+
+.card-footer .link:hover {
+  text-decoration: underline;
+}
+
+.card-footer .divider {
+  width: 1px;
+  height: 12px;
+  background: var(--card-border);
 }
 
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
-section { animation: fade-up 0.7s ease-out both; }

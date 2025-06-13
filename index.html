@@ -3,94 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MoneyCoach MA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet">
+  <title>MoneyCoach MA - Connexion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <nav aria-label="main navigation" class="nav-bar">
-      <a href="#hero" class="logo" aria-label="MoneyCoach MA Home">
-        <svg width="40" height="40" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><circle cx="50" cy="50" r="40"/></svg>
-      </a>
-      <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#join">Join Beta</a>
-      </div>
-    </nav>
-  </header>
-  <main>
-    <section id="hero" class="hero-section">
-      <h1>MoneyCoach MA</h1>
-      <p class="tagline">Coach financier personnel Darija / Fr.</p>
-      <button class="cta" aria-label="Scroll to join form" onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'});">kayn lik solution budget !</button>
-    </section>
-
-    <section class="problem-solution content-section">
-      <div class="cards problems">
-        <article class="card glass-card">manque de visibilite</article>
-        <article class="card glass-card">budgets compliques</article>
-        <article class="card glass-card">alertes tardives</article>
-      </div>
-      <div class="cards solutions">
-        <article class="card glass-card">agregation multi-banques</article>
-        <article class="card glass-card">budgets dynamiques</article>
-        <article class="card glass-card">alertes « 9erbou ysaliw lflous ! »</article>
-      </div>
-    </section>
-
-    <section id="features" class="features-grid content-section">
-      <div class="feature-card glass-card">
-        <div class="feature-icon" aria-hidden="true">📩</div>
-        <p>Multi-bank import SMS</p>
-      </div>
-      <div class="feature-card glass-card">
-        <div class="feature-icon" aria-hidden="true">📊</div>
-        <p>Burn-rate hebdo graph</p>
-      </div>
-      <div class="feature-card glass-card">
-        <div class="feature-icon" aria-hidden="true">🔔</div>
-        <p>Budgets auto-alertes &gt;90 %</p>
-      </div>
-      <div class="feature-card glass-card">
-        <div class="feature-icon" aria-hidden="true">🌐</div>
-        <p>Darija / French switch</p>
-      </div>
-    </section>
-
-    <section class="mockup-strip">
-      <img src="https://placehold.co/400x800?text=Screen+1" alt="app screen" class="screen">
-      <img src="https://placehold.co/400x800?text=Screen+2" alt="app screen" class="screen">
-      <img src="https://placehold.co/400x800?text=Screen+3" alt="app screen" class="screen">
-    </section>
-
-    <section class="pricing content-section">
-      <h2>Free Beta</h2>
-      <p>tiers coming soon</p>
-    </section>
-
-    <section id="join" class="join-beta content-section">
-      <h2>Join Beta</h2>
-      <form action="mailto:hello@example.com" method="post" enctype="text/plain" aria-label="Join beta form">
-        <label>Email
-          <input type="email" name="email" required>
+  <main class="login-container">
+    <div class="login-card">
+      <header class="card-header">
+        <h1>MoneyCoach MA</h1>
+        <p>Connecte-toi à ton coach financier</p>
+      </header>
+      <form class="login-form" aria-label="login form">
+        <label for="email">Email
+          <input id="email" type="email" placeholder="Email" aria-label="Email" required>
         </label>
-        <label>Phone
-          <input type="tel" name="phone" pattern="[0-9]+" required>
+        <label for="password">Mot de passe
+          <input id="password" type="password" placeholder="Mot de passe" aria-label="Mot de passe" required>
         </label>
-        <p class="privacy">Données conformes loi 09-08.</p>
-        <button type="submit" class="cta" aria-label="Submit join beta">Demarrer la beta</button>
+        <button type="submit" class="submit-btn" aria-label="Se connecter">Se connecter</button>
       </form>
-    </section>
+      <footer class="card-footer">
+        <a href="#" class="link">Mot de passe oublié ?</a>
+        <span class="divider" aria-hidden="true"></span>
+        <a href="#" class="link">Pas encore inscrit ? Crée un compte</a>
+      </footer>
+    </div>
   </main>
-
-  <footer class="site-footer">
-    <nav aria-label="footer navigation" class="footer-nav">
-      <a href="#" aria-label="Politique vie privee">Politique vie privee</a>
-      <a href="#" aria-label="Terms">Terms</a>
-      <a href="https://github.com" aria-label="GitHub">GitHub</a>
-    </nav>
-    <small>© 2025 MoneyCoach MA</small>
-  </footer>
 </body>
 </html>
