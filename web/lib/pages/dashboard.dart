@@ -1,0 +1,21 @@
+// Dashboard page with burn rate graph
+import 'package:flutter/material.dart';
+
+class DashboardPage extends StatelessWidget {
+  const DashboardPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Dashboard')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Text('Burn rate graph here'),
+          ],
+        ),
+      ),
+    );
+  }
+}

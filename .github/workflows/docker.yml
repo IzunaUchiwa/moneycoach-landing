@@ -1,0 +1,27 @@
+# Workflow to build and push Docker images
+name: Build and Push
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+      - name: Build API image
+        run: docker build -t api:latest ./api
+      - name: Build Web image
+        run: docker build -t web:latest ./web
+      - name: Push images
+        run: |
+          echo $CR_PAT | docker login ghcr.io -u USERNAME --password-stdin
+          docker tag api:latest ghcr.io/username/api:latest
+          docker tag web:latest ghcr.io/username/web:latest
+          docker push ghcr.io/username/api:latest
+          docker push ghcr.io/username/web:latest

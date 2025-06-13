@@ -1,0 +1,9 @@
+// Service managing transactions
+import { Injectable } from '@nestjs/common';
+
+@Injectable()
+export class TransactionService {
+  list() {
+    return [];
+  }
+}
