@@ -1,3 +1,4 @@
+// Service handling budget operations
 import { Injectable } from '@nestjs/common';
 
 @Injectable()

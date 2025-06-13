@@ -1,3 +1,4 @@
+# Dockerfile for building Web image
 FROM cirrusci/flutter:latest-web AS build
 WORKDIR /app
 COPY . .

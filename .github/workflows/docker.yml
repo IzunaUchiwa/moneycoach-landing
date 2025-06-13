@@ -1,3 +1,4 @@
+# Workflow to build and push Docker images
 name: Build and Push
 on:
   push:
@@ -19,4 +20,8 @@ jobs:
         run: docker build -t web:latest ./web
       - name: Push images
         run: |
-          echo "login and push here"
+          echo $CR_PAT | docker login ghcr.io -u USERNAME --password-stdin
+          docker tag api:latest ghcr.io/username/api:latest
+          docker tag web:latest ghcr.io/username/web:latest
+          docker push ghcr.io/username/api:latest
+          docker push ghcr.io/username/web:latest

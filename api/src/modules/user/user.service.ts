@@ -1,3 +1,4 @@
+// Service for user queries
 import { Injectable } from '@nestjs/common';
 
 @Injectable()

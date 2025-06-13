@@ -1,3 +1,4 @@
+// Service managing transactions
 import { Injectable } from '@nestjs/common';
 
 @Injectable()

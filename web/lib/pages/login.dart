@@ -1,3 +1,4 @@
+// Login page for OTP authentication
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {

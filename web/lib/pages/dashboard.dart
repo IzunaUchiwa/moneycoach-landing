@@ -1,3 +1,4 @@
+// Dashboard page with burn rate graph
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatelessWidget {

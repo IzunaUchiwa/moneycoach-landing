@@ -1,3 +1,4 @@
+# Workflow for lint and tests
 name: CI
 on:
   pull_request:
@@ -16,3 +17,5 @@ jobs:
         run: pnpm --filter api lint
       - name: Test API
         run: pnpm --filter api test
+      - name: Analyze Web
+        run: pnpm --filter web run analyze || true

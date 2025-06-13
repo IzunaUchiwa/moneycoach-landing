@@ -1,3 +1,4 @@
+// Five step onboarding wizard
 import 'package:flutter/material.dart';
 
 class OnboardingPage extends StatefulWidget {

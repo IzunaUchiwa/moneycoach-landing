@@ -1,3 +1,4 @@
+// Controller for OTP endpoints
 import { Controller, Post, Body } from '@nestjs/common';
 import { AuthService } from './auth.service';
 
@@ -11,7 +12,7 @@ export class AuthController {
   }
 
   @Post('validate-otp')
-  validateOtp(@Body('phone') phone: string, @Body('code') code: string) {
+  async validateOtp(@Body('phone') phone: string, @Body('code') code: string) {
     return this.authService.validateOtp(phone, code);
   }
 }

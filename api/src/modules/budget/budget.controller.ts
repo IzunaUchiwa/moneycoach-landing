@@ -1,3 +1,4 @@
+// Handles budget related endpoints
 import { Controller, Get } from '@nestjs/common';
 import { BudgetService } from './budget.service';
 

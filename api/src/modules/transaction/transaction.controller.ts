@@ -1,3 +1,4 @@
+// Provides transaction list endpoint
 import { Controller, Get } from '@nestjs/common';
 import { TransactionService } from './transaction.service';
 
