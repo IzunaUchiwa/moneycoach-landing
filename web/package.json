@@ -1,0 +1,9 @@
+{
+  "name": "web",
+  "private": true,
+  "scripts": {
+    "dev": "flutter run -d web-server",
+    "build": "flutter build web",
+    "analyze": "flutter analyze"
+  }
+}

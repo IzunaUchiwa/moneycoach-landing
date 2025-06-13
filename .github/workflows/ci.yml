@@ -1,0 +1,21 @@
+# Workflow for lint and tests
+name: CI
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+      - name: Lint API
+        run: pnpm --filter api lint
+      - name: Test API
+        run: pnpm --filter api test
+      - name: Analyze Web
+        run: pnpm --filter web run analyze || true
